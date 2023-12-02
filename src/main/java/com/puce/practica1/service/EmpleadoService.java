@@ -22,8 +22,8 @@ public class EmpleadoService {
     public List<Empleado> getEmpleados(){
         return empleadoRepository.getAllEmpleados();
     }
-    public String deleteEmpleado (int empleado){
-        return empleadoRepository.delete(empleado);
+    public String deleteEmpleado(int id) {
+        return empleadoRepository.delete(id);
     }
 
     public Empleado updateEmpleado (Empleado empleado){
@@ -32,6 +32,18 @@ public class EmpleadoService {
 
     public Empleado getEmpleadoById(int id){
         return empleadoRepository.findById(id);
+    }
+
+    public List<Empleado> listarPorEmail(String email) {
+        return empleadoRepository.findByEmail(email);
+    }
+
+    public List<Empleado> listarSueldoMayorA1000() {
+        return empleadoRepository.findBySueldoGreaterThan(1000.0);
+    }
+
+    public List<Empleado> listarExperienciaMayorA5Anios() {
+        return empleadoRepository.findByAniosExperienciaGreaterThan(5);
     }
 
 

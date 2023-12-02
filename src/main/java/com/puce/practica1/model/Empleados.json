@@ -1,0 +1,52 @@
+[
+        {
+            "id": 1,
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "edad": 30,
+            "sueldo": 50000.0,
+            "aniosExperiencia": 5,
+            "telefono": "123456789",
+            "email": "juan.perez@example.com"
+        },
+        {
+            "id": 2,
+            "nombre": "María",
+            "apellido": "Gómez",
+            "edad": 28,
+            "sueldo": 45000.0,
+            "aniosExperiencia": 3,
+            "telefono": "987654321",
+            "email": "maria.gomez@example.com"
+        },
+        {
+            "id": 3,
+            "nombre": "Carlos",
+            "apellido": "López",
+            "edad": 35,
+            "sueldo": 60000.0,
+            "aniosExperiencia": 8,
+            "telefono": "456789123",
+            "email": "carlos.lopez@example.com"
+        },
+        {
+            "id": 4,
+            "nombre": "Ana",
+            "apellido": "Martínez",
+            "edad": 32,
+            "sueldo": 55000.0,
+            "aniosExperiencia": 6,
+            "telefono": "321654987",
+            "email": "ana.martinez@example.com"
+        },
+        {
+            "id": 5,
+            "nombre": "Pedro",
+            "apellido": "Sánchez",
+            "edad": 33,
+            "sueldo": 58000.0,
+            "aniosExperiencia": 7,
+            "telefono": "789456123",
+            "email": "pedro.sanchez@example.com"
+        }
+    ]

@@ -1,6 +1,8 @@
 package com.puce.practica1.repository;
 //segundo el repositorio
 import java.util.*;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.*;
 
 //importar el modelo
@@ -27,6 +29,7 @@ public class EmpleadoRepository {
         empleado.setId(e.getId());
         empleado.setNombre(e.getNombre());
         empleado.setApellido(e.getApellido());
+        empleado.setEmail(e.getEmail());
         empleado.setEdad(e.getEdad());
         empleado.setSueldo(e.getSueldo());
         empleado.setAniosExperiencia(e.getAniosExperiencia());
@@ -35,13 +38,15 @@ public class EmpleadoRepository {
         return empleado;
     }
 
-    public String delete (int id){
+
+    public String delete(int id) {
         empleados.removeIf(empleado -> empleado.getId() == id);
-        return null;
+        return "Empleado eliminado con éxito";
     }
 
+
     public Empleado update (Empleado empleado){
-        int id = 0;
+        
         int idPos =0;
 
         for (int i=0; i<empleados.size(); i++) {
@@ -51,9 +56,10 @@ public class EmpleadoRepository {
             }
         }
         Empleado empleadoact = new Empleado();
-        empleadoact.setId(id);
+        empleadoact.setId(empleado.getId());
         empleadoact.setNombre(empleado.getNombre());
         empleadoact.setApellido(empleado.getApellido());
+        empleadoact.setEmail(empleado.getEmail());
         empleadoact.setEdad(empleado.getEdad());
         empleadoact.setSueldo(empleado.getSueldo());
         empleadoact.setAniosExperiencia(empleado.getAniosExperiencia());
@@ -61,6 +67,22 @@ public class EmpleadoRepository {
         empleados.set(idPos, empleadoact);
         return empleadoact;
 
+    }
+
+        public List<Empleado> findBySueldoGreaterThan(double sueldo) {
+        return empleados.stream()
+            .filter(e -> e.getSueldo() > sueldo)
+            .collect(Collectors.toList());
+    }
+    public List<Empleado> findByAniosExperienciaGreaterThan(int aniosExperiencia) {
+        return empleados.stream()
+            .filter(e -> e.getAniosExperiencia() > aniosExperiencia)
+            .collect(Collectors.toList());
+    }
+    public List<Empleado> findByEmail(String email) {
+        return empleados.stream()
+            .filter(e -> e.getEmail().equalsIgnoreCase(email))
+            .collect(Collectors.toList());
     }
 
 }
